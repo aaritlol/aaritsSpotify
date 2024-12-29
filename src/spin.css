@@ -1,0 +1,79 @@
+/* spin.css */
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spinText {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spin {
+    display: inline-block;
+    animation: spin 12s linear infinite; /* Rotate parent (image) */
+    position: absolute; /* So we can move it around the viewport */
+    width: 550px; /* Set the width of the parent (adjust as needed) */
+    height: 550px; /* Set the height of the parent (adjust as needed) */
+    background-image: url('vinylimage.png'); /* Set your image as background */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image in the container */
+    border-radius: 50%; /* Optional: Makes the parent a circle */
+    overflow: hidden; /* Optional: Prevents child from overflowing */
+    top: 40px;  /* Move the parent 40px from the top of the viewport */
+    left: 45%;   /* Move the parent 50% from the left (center it horizontally) */
+    transform: translateX(-50%); /* Center it exactly at 50% */
+    z-index: 50;
+  }
+  
+  .spinText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Position the text inside the parent */
+    top: 287px; /* Vertically center child */
+    left: 265px; /* Horizontally center child */
+    transform: translate(-50%, -50%); /* Offset by 50% of text size to center it */
+    z-index: 150; /* Ensure the text appears above the image */
+    font-size: 13px; /* Set text size */
+    color: rgb(0, 0, 0); /* Set text color */
+    text-align: center; /* Ensure text is centered */
+    rotate:10deg
+    /*animation: spinText 8s linear infinite; /* Apply rotation to the text independently */
+  }
+  
+  /* The album cover styling (the image) */
+  .albumCover {
+    width: 40%;  /* Set the width to 40% of the parent container */
+    height: auto;  /* Maintain aspect ratio */
+    position: absolute; /* Position it absolutely */
+    top: 5%; /* Move it down by 20% */
+    left: 15%; /* Center it horizontally */
+    rotate:-5deg; /* Center and rotate the image */
+    z-index: 160; /* Ensure it appears above the spin text */
+    border-width: 10px;
+    border-color: black;
+  }
+  .seekbar {
+    position: absolute;
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    left: 0;      /* Align to the left side */
+    width: 100%;   /* Stretch to full width of the screen */
+    z-index: 100;  /* Ensure it is above other content */
+  }
+  .playButton {
+    position: absolute;
+    bottom: 20px;    /* Adjust the distance from the bottom */
+    right: 20px;     /* Adjust the distance from the right */
+    z-index: 150;    /* Make sure the button appears above other content */
+  }
