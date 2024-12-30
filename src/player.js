@@ -38,7 +38,7 @@ export default function Player() {
       setLoading(true);
       setError(null);
 
-      const apiKey = 'AIzaSyBnYOb_9_wD8cxKml8_3wF6aSU7j-0g0m8';
+      const apiKey = 'AIzaSyC_KS60oA2ULb7rQmHqOMF23DAl5cub_gY';  // Replaced API key here
       const link = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${currentTrack.trackName} ${currentTrack.artist} ${currentTrack.album} official song&key=${apiKey}`;
 
       const fetchWithAllOrigins = async () => {
@@ -134,7 +134,7 @@ export default function Player() {
 
       if (searchData.tracks.items.length > 0) {
         // Fetch YouTube videos for the top 5 Spotify tracks
-        const youtubeApiKey = 'AIzaSyBnYOb_9_wD8cxKml8_3wF6aSU7j-0g0m8';  // Updated API Key
+        const youtubeApiKey = 'AIzaSyC_KS60oA2ULb7rQmHqOMF23DAl5cub_gY';  // Replaced API key here
         const youtubeResults = [];
 
         for (let track of searchData.tracks.items) {
